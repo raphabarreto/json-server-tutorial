@@ -21,6 +21,13 @@ const renderDetails = async () => {
 deleteButton.addEventListener('click', async (e) => {
   e.preventDefault();
 
+  const removeAlert = window.confirm(
+    'Are you sure you want to remove this post?',
+  );
+  if (!removeAlert) {
+    return;
+  }
+
   const response = await fetch(`http://localhost:3000/posts/${id}`, {
     method: 'DELETE',
   });
