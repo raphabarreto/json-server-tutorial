@@ -6,25 +6,26 @@ const deleteButton = document.querySelector('.delete');
 const renderDetails = async () => {
   const response = await fetch(`http://localhost:3000/posts/${id}`);
   const post = await response.json();
-  
+
   const template = `
     <div class="post">
       <h1>${post.title}</h1>
       <p>${post.body}</p>
       <a href="/">Go back</a>
-    </div>  
-  `
+    </div>
+  `;
 
   container.innerHTML = template;
-}
+};
 
 deleteButton.addEventListener('click', async (e) => {
+  e.preventDefault();
+
   const response = await fetch(`http://localhost:3000/posts/${id}`, {
     method: 'DELETE',
   });
 
-  window.location.replace('/')
+  window.location.replace('/');
 });
-  
+
 window.addEventListener('DOMContentLoaded', () => renderDetails());
-  
