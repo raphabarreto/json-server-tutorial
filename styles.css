@@ -63,3 +63,13 @@ textarea {
 .post a:hover {
   color: #259173;
 }
+
+.search {
+  padding: 10px 0 10px;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+.search:focus {
+  color: #444;
+}

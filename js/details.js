@@ -1,6 +1,7 @@
 // javascript for details.html
 const id = new URLSearchParams(window.location.search).get('id');
 const container = document.querySelector('.details');
+const deleteButton = document.querySelector('.delete');
 
 const renderDetails = async () => {
   const response = await fetch(`http://localhost:3000/posts/${id}`);
@@ -17,5 +18,13 @@ const renderDetails = async () => {
   container.innerHTML = template;
 }
 
-window.addEventListener('DOMContentLoaded', () => renderDetails());
+deleteButton.addEventListener('click', async (e) => {
+  const response = await fetch(`http://localhost:3000/posts/${id}`, {
+    method: 'DELETE',
+  });
 
+  window.location.replace('/')
+});
+  
+window.addEventListener('DOMContentLoaded', () => renderDetails());
+  
