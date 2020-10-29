@@ -47,7 +47,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ---
 ## 💻 Projeto
-Esta aplicação simples foi desenvolvida com propósitos de estudos para entender como que funciona
+Esta aplicação simples foi desenvolvida com propósitos de estudos para entender como que funciona:
+
+- Instalação do Json Server para termos uma **"fake"** REST API, para facilitar o desenvolvimento ou prototipação
+ao invés de implementar todo um backend complexo
+- Entendermos como que funcionam as interações de endpoints, como requisições POST, DELETE, CREATE
 
 ---
 
